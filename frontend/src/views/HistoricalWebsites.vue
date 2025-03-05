@@ -21,7 +21,23 @@
 </template>
 
 <script>
-// TODO: Fetch websites data from API
+export default {
+  name: 'HistoricalWebsites',
+  data() {
+    return {
+      websites: []
+    }
+  },
+  async created() {
+    try {
+      const response = await fetch('https://mch-dev.userwei.com/api/websites')
+      const data = await response.json()
+      this.websites = data
+    } catch (error) {
+      console.error('獲取網站資料時發生錯誤：', error)
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -39,7 +55,10 @@
 }
 
 .websites-grid {
-  /* TODO: Add styles for a responsive grid layout */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
 }
 
 .website-card {

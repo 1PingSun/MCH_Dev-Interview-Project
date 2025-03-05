@@ -1,10 +1,15 @@
 <template>
   <div class="introduction">
     <header class="intro-header">
-      <h2>自我介紹</h2>
-      <p>
-        簡單自我介紹+本人圖片
-      </p>
+      <div class="intro-img">
+        <img src="https://1ping.org/src/profile-avatar.webp"/>
+      </div>
+      <div class="intro-text">
+        <h2>自我介紹</h2>
+        <p>
+          我是孫逸平，目前就讀臺北市數位實驗高中，專長領域涵蓋資安、創客、急救、烏克麗麗和吉他等。 
+        </p>
+      </div>
         
       
     </header>
@@ -29,12 +34,25 @@
 }
 
 .intro-header {
+  display: flex;
+  flex-direction: row;
   background-color: #f5f5f5;
   padding: 40px;
   border-radius: 10px;
+  gap: 20px;
 }
 
+.intro-img {
+  width: 250px;
+  height: 200px;
+}
 
+.intro-img img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5%;
+}
 
 .intro-text h2 {
   font-size: 2rem;
